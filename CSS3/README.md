@@ -145,7 +145,7 @@ border-width: 10px;
 border-color: blue;
 ```
 
-- Shorthand - 
+- Shorthand -
 
 ```css
 border: 1rem solid blue;
@@ -157,7 +157,7 @@ border: 1rem solid blue;
 
 ```css
 border-top-style: dotted;
-border-right-style: solid;  
+border-right-style: solid;
 border-bottom-style: dotted;
 border-left-style: solid;
 ```
@@ -170,7 +170,7 @@ border-width: 25px 10px 4px 35px; /* 25px top, 10px right, 4px bottom and 35px l
 border-width: 5px; /* If all 4 items are the same */
 ```
 
-- `border-radius` - 
+- `border-radius` -
 
 ```css
 border-radius: 5px; /* All 4 corners are maintaining 5px */
@@ -219,4 +219,90 @@ outline-offset: 10px;
 
 ## Display Property
 
-- 
+- Elements have it set by default
+- `block` - Always starts a new line and spans full width
+- By default, `div`, `p` and `h1` are the example of `display: block` element
+- I can change it as `display: inline`
+
+```css
+display: block;
+```
+
+- `inline` - Does not start a new line and spans only content
+- By default, `span`, `a` and `img` are the example of `display: inline` element
+- I can change it as `display: block`
+
+```css
+display: inline;
+```
+
+- I can set margin property to `auto` to horizontally (left to right) center the element within its container
+- Remaining empty space will be split equally between the left and right
+
+```css
+margin: auto; /* Only mention left-right */
+margin: 3rem auto; /* top-bottom: 3rem & left-right: auto */
+margin-left: auto; /* Element move to right */
+margin-right: auto; /* Element move to left */
+```
+
+- `block` - browser respects width/height, top/bottom margin
+- `inline` - browser does not respect width/height, top/bottom margin
+
+```css
+div {
+  background: blue;
+  color: white;
+  width: 300px;
+  height: 200px;
+  margin-top: 20px;
+  margin-bottom: 200px;
+}
+
+span {
+  background: blue;
+  color: white;
+  width: 300px; /* Not applicable for inline element 'span' */
+  height: 200px; /* Not applicable for inline element 'span' */
+  margin-top: 20px; /* Not applicable for inline element 'span' */
+  margin-bottom: 200px; /* Not applicable for inline element 'span' */
+}
+```
+
+### Descendant Selectors
+
+- In HTML -
+
+```html
+<ul>
+  <li><a href="#">home</a></li>
+  <li><a href="#">about us</a></li>
+  <li><a href="#">products</a></li>
+  <li><a href="#">contact</a></li>
+  <a href="#">testing</a>
+</ul>
+```
+
+- Select all `li` - 
+
+```css
+ul li {
+  list-style-type: none; /* Remove dot-point style */
+}
+```
+
+- Select all `a` inside `ul li` (more specific) - 
+
+```css
+ul li a {
+  color: black;
+}
+```
+
+- Select all `a` inside `ul` - 
+
+```css
+ul a {
+  color: green;
+}
+```
