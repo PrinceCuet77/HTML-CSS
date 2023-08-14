@@ -24,7 +24,7 @@ font-family: 'Courier New', Courier, monospace;
 
 ### Google Fonts
 
-- Use in html
+- Use in HTML
 
 ```html
 <!-- Google fonts -->
@@ -34,13 +34,13 @@ font-family: 'Courier New', Courier, monospace;
 />
 ```
 
-- And use in css as well
+- And use in CSS as well
 
 ```css
 font-family: 'Roboto', sans-serif;
 ```
 
-- Or I can import in css and use in css as well
+- Or I can import in CSS and use in CSS as well
 
 ```css
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
@@ -210,12 +210,15 @@ outline: 5px solid blue;
 
 - `outline-offset` - add space between an outline and the edge/border of an element
 - The space between an element and its outline is transparent
-- `outline-offset` could be +ve and -ve
 
 ```css
 outline: 5px solid blue;
 outline-offset: 10px;
 ```
+
+- `outline-offset` could be +ve and -ve
+
+![Outline Offset](photo/outline-offset.png)
 
 ## Display Property
 
@@ -245,6 +248,8 @@ margin: 3rem auto; /* top-bottom: 3rem & left-right: auto */
 margin-left: auto; /* Element move to right */
 margin-right: auto; /* Element move to left */
 ```
+
+![Margin Auto](photo/margin-auto.png)
 
 - `block` - browser respects width/height, top/bottom margin
 - `inline` - browser does not respect width/height, top/bottom margin
@@ -283,7 +288,7 @@ span {
 </ul>
 ```
 
-- Select all `li` - 
+- Select all `li` -
 
 ```css
 ul li {
@@ -291,7 +296,7 @@ ul li {
 }
 ```
 
-- Select all `a` inside `ul li` (more specific) - 
+- Select all `a` inside `ul li` (more specific) -
 
 ```css
 ul li a {
@@ -299,10 +304,150 @@ ul li a {
 }
 ```
 
-- Select all `a` inside `ul` - 
+- Select all `a` inside `ul` -
 
 ```css
 ul a {
   color: green;
 }
 ```
+
+- `box-sizing` - include the padding and border in an element's total width and height
+
+```css
+box-sizing: content-box; /* By default */
+```
+
+![content-box](photo/content-box.png)
+
+- By default, the width and height of an element is calculated like -
+- width + padding + border = actual width of an element
+- height + padding + border = actual height of an element
+- So, Adding height/width of an element, shows bigger than I have set
+- Because of element's border and padding are also added
+- Actually, padding within the element
+
+```css
+box-sizing: border-box;
+```
+
+- Though add `10px` padding, the total width of the element does not increase
+
+![border-box](photo/box-sizing.png)
+
+- `inline-block` - does not start a new line
+- Browser respects margin, width, height
+- Comparison among `inline`, `inline-block`, `block` -
+
+![Difference between 3 types of display](photo/different-among-display-type.png)
+
+- `none` - remove from the flow, hide element collapse the space
+
+```css
+display: none;
+```
+
+- `opacity: 0`, `visibility: hidden` - hides element preserves the space
+
+```css
+opacity: 0;
+visibility: hidden;
+```
+
+- Difference is `disply: none` remove the element from the container, so next element will be replaced that space
+- Others are not removed, but only off the element's visibility, so next element will not be replaced that space
+
+## Background Images
+
+- `background` - set a background image
+
+```css
+background: url("./big.jpeg")
+background: url("./images/big.jpeg") /* Image in the folder */
+```
+
+- `background-repeat` - sets if/how a background image will be repeated
+
+```css
+background-repeat: repeat; /* By default repeat according x & y axis */
+background-repeat: no-repeat;
+background-repeat: repeat-x;
+background-repeat: repeat-y;
+background-repeat: space; /* Repeat with space in x & y axis */
+background-repeat: round; /* If contains one more full image space then add else existing images will be increased adjusting width & height */
+```
+
+- `background-size` - specifies the size of the background images
+- `background-size: cover` - resize the background image to cover the entire container
+- `background-size: contain` - resize the background image to make sure the image is fully visible
+
+![Background Size](photo/background-size.png)
+
+- `background-position` - sets the starting position of a background image
+
+```css
+background-position: center;
+background-position: left;
+background-position: right;
+background-position: bottom;
+background-position: top;
+background-position: 0 0; /* By default */
+background-position: 10% 20%; /* X: 10%, Y: 20% */
+```
+
+- `background-attachment` - sets whether a background image scrolls with the rest of the page or is fixed
+
+```css
+background-attachment: scroll; /* By default */
+background-attachment: fixed;
+```
+
+- `linear-gradient`
+
+```css
+background: linear-gradient(red, green); /* Can add more colors */
+background: linear-gradient(to bottom, red, green); /* By default: to bottom */
+background: linear-gradient(315deg, red, green);
+background: linear-gradient(to top right, red, green);
+background: linear-gradient(red 20%, green 70%); /* 20% & 70% dark */
+background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9));
+```
+
+- Background image overlay - add a shadow-like image over the background image
+
+```css
+background: liner-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  url('./big/jpeg');
+```
+
+- Overall `background` properties are -
+
+```css
+background: liner-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  url('./big/jpeg');
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+```
+
+- Combining `background` properties -
+
+```css
+background: liner-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  url('./big/jpeg') center/cover no-repeat fixed;
+```
+
+- Alternate way - 
+
+```css
+background: liner-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  url('./big/jpeg') center/cover fixed no-repeat;
+```
+
+- Don't alternate `cover/center`, it won't work
+- For generate linear gradient, I can visit [ColorZilla](https://www.colorzilla.com/gradient-editor/)
+
+## CSS Property
+
+- 
