@@ -450,4 +450,28 @@ background: liner-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
 
 ## CSS Property
 
-- 
+- `float` - is used for positioning and formatting content
+- `float` property can be used to wrap text around images
+
+```css
+float: left;
+float: right;
+float: none; /* By default */
+float: inherit;
+```
+
+- `clear` - specifies what should happen with the element that is next to a floating element
+
+```css
+clear: left;
+clear: right;
+clear: none; /* By default */
+clear: both; /*  */
+clear: inherit;
+```
+
+- If an element is floated to the left, then I should clear to the left
+
+https://www.w3schools.com/css/css_float.asp
+https://www.w3schools.com/css/css_float_clear.asp
+take ss - https://www.w3schools.com/css/tryit.asp?filename=trycss_layout_clear
