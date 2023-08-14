@@ -531,4 +531,42 @@ top: 10px; /* From top, takes 10px gap and stays 'sticky' while scrolling */
 
 - Responsive design
 - Style elements on different screen sizes
-- 
+- `min-width` - starting from
+- `max-width` - up to
+
+```css
+body {
+  background: yellow;
+  text-decoration: underline;
+}
+
+/* And more on */
+
+/* This responsive design applicable from 576px */
+@media screen and (min-width: 576px) {
+  body {
+    background: red;
+    /* text-decoration: underline; */
+    /* If I don't change any existing property value, it will remain same */
+  }
+
+  /* And more on */
+}
+
+/* This responsive design applicable up to 768px */
+@media screen and (max-width: 768px) {
+  body {
+    background: red;
+    /* text-decoration: underline; */
+    /* If I don't change any existing property value, it will remain same */
+  }
+
+  /* And more on */
+}
+```
+
+## Z-index
+
+- z-index - z-axis
+- Default - `0`
+- Does not work on `position: static`
