@@ -66,7 +66,7 @@ font-align: center;
 font-indent: 40px; /* First line of the paragraph will be gone 40px right indent */
 ```
 
-- `line-height` - height between two lines, i.e. `30px`, `2` (2 * 16 (default `font-size`) = 32px), `1.2rem`
+- `line-height` - height between two lines, i.e. `30px`, `2` (2 \* 16 (default `font-size`) = 32px), `1.2rem`
 
 ```css
 body {
@@ -83,3 +83,140 @@ body {
 ## CSS Box Model
 
 ![CSS Box Model](photo/css-box-model.png)
+
+### Padding
+
+- Distance between content and edge of the element
+- Specifies a padding in `px`, `rem`, `pt`, `cm`, etc.
+- Single padding -
+
+```css
+padding-top: 5px;
+padding-top: 10px;
+padding-top: 15px;
+padding-top: 20px;
+```
+
+- Combining all 4 -
+
+```css
+padding: 5px; /* If all 4 items are the same */
+padding: 5px 10px; /* top-bottom right-left */
+padding: 5px 10px 15px 20px; /* If all 4 items are the different */
+```
+
+### Margin
+
+- Distance between element and the screen or element and the other element
+- Specifies a margin in `px`, `rem`, `pt`, `cm`, etc.
+- In browser, there has some default margin
+- To get rid of -
+
+```css
+* {
+  margin: 0;
+}
+```
+
+- Single margin -
+
+```css
+margin-top: 5px;
+margin-top: 10px;
+margin-top: 15px;
+margin-top: 20px;
+```
+
+- Combining all 4 -
+
+```css
+margin: 5px; /* If all 4 items are the same */
+margin: 5rem 10px; /* top-bottom right-left */
+margin: 5rem 10px 15px 20px; /* If all 4 items are the different */
+```
+
+## Border
+
+- Specify the style, width and color of an element's border
+
+```css
+border-style: solid;
+border-width: 10px;
+border-color: blue;
+```
+
+- Shorthand - 
+
+```css
+border: 1rem solid blue;
+```
+
+- `border-style` specifies what kind of border to display
+- Like - `dotted`, `dashed`, `solid`, `double`, `none`, `hidden`, etc
+- I can assign 4 sides for 4 styles
+
+```css
+border-top-style: dotted;
+border-right-style: solid;  
+border-bottom-style: dotted;
+border-left-style: solid;
+```
+
+- `border-width` specifies `px`, `rem`, `pt`, `cm`, etc.
+
+```css
+border-width: 5px 20px; /* 5px top and bottom, 20px on the sides */
+border-width: 25px 10px 4px 35px; /* 25px top, 10px right, 4px bottom and 35px left */
+border-width: 5px; /* If all 4 items are the same */
+```
+
+- `border-radius` - 
+
+```css
+border-radius: 5px; /* All 4 corners are maintaining 5px */
+```
+
+- -ve `margin` - overlapping two elements
+
+```css
+margin-top: -50px;
+```
+
+- `outline` - outside the borders to make the element stand out
+
+```css
+outline-style: solid;
+outline-width: 10px;
+outline-color: blue;
+```
+
+![outline](photo/outline.png)
+
+- `outline-style` specifies the style of the outline
+- Like - `dotted`, `dashed`, `solid`, `double`, `none`, `hidden`, etc
+- I can assign 4 sides for 4 styles
+
+```css
+outline-width: 5px 20px; /* 5px top and bottom, 20px on the sides */
+outline-width: 25px 10px 4px 35px; /* 25px top, 10px right, 4px bottom and 35px left */
+outline-width: 5px; /* If all 4 items are the same */
+```
+
+- Shorthand
+
+```css
+outline: 5px solid blue;
+```
+
+- `outline-offset` - add space between an outline and the edge/border of an element
+- The space between an element and its outline is transparent
+- `outline-offset` could be +ve and -ve
+
+```css
+outline: 5px solid blue;
+outline-offset: 10px;
+```
+
+## Display Property
+
+- 
