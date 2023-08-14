@@ -466,12 +466,69 @@ float: inherit;
 clear: left;
 clear: right;
 clear: none; /* By default */
-clear: both; /*  */
+clear: both; /* Clear both left & right */
 clear: inherit;
 ```
 
 - If an element is floated to the left, then I should clear to the left
 
-https://www.w3schools.com/css/css_float.asp
-https://www.w3schools.com/css/css_float_clear.asp
-take ss - https://www.w3schools.com/css/tryit.asp?filename=trycss_layout_clear
+![Float Clear](photo/float-clear.png)
+
+### Position
+
+- specifies the type of positioning method used for an element (`static`, `relative`, `fixed`, `absolute` or `sticky`)
+- `static` - default, always positioned according to the normal flow
+- [`static` Example](https://www.w3schools.com/css/tryit.asp?filename=trycss_position_static)
+
+```css
+position: static;
+```
+
+- `relative` - position relative to it's normal position
+- While using `relative`, must use `top`, `bottom`, `left` & `right`
+- [`relative` Example](https://www.w3schools.com/css/tryit.asp?filename=trycss_position_relative)
+
+```css
+position: relative;
+left: 200px;
+```
+
+- `absolute` - relative to the nearest positioned ancestor with `position: relative`
+- [`absolute` Example](https://www.w3schools.com/css/tryit.asp?filename=trycss_position_absolute)
+
+```css
+div { /* Parent */
+  position: relative;
+}
+
+p { /* Child */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+```
+
+- `fixed` - relative to viewport (screen), stays as wer are scrolling
+- Will use other content to fill out the space
+- [`fixed` Example](https://www.w3schools.com/css/tryit.asp?filename=trycss_position_fixed)
+
+```css
+position: fixed;
+top: 0;
+left: 0;
+```
+
+- `sticky` - toggles between relative and fixed once the position is met in the viewport, then it sticks
+- One of the values `top`, `bottom`, `left` & `right`
+- [`sticky` Example](https://www.w3schools.com/css/tryit.asp?filename=trycss_position_sticky)
+
+```css
+position: sticky;
+top: 10px; /* From top, takes 10px gap and stays 'sticky' while scrolling */
+```
+
+## Media Queries
+
+- Responsive design
+- Style elements on different screen sizes
+- 
