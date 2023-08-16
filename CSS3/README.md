@@ -1071,3 +1071,116 @@ text-shadow: x-value y-value blur-value color;
 - To check the browser compatibility [click here](https://caniuse.com/)
 - [Generate Autoprefix Online](https://autoprefixer.github.io/)
 - Write my css and paste it here and generate autoprefix as needed
+
+## Emmet - Shortcut
+
+- If I loose suggestion then `ctrl + space`
+- In HTML (multiple classes) -
+
+```html
+<h1 class="main secondary big"></h1>
+```
+
+- Type the following and hit `enter` (if suggestion is show shown hit `ctrl + space`)
+
+```html
+h1.main.secondary.big
+```
+
+- In HTML (for id) -
+
+```html
+<h1 id="main"></h1>
+```
+
+- Type the following and hit `enter`
+
+```html
+h1#main
+```
+
+- In HTML (multiple classes & single id) -
+
+```html
+<header id="third third-2" class="third"></header>
+```
+
+- Type the following and hit `enter`
+
+```html
+header#third.third.third-2
+```
+
+- If tag is `div`, then can use like the following way -
+
+```html
+#third.third
+```
+
+- Outcome -
+
+```html
+<div id="third" class="third"></div>
+```
+
+- Create children
+
+```html
+div>ul>li
+```
+
+- Outcome -
+
+```html
+<div>
+  <ul>
+    <li></li>
+  </ul>
+</div>
+```
+
+- Create multiple children
+
+```html
+div>ul>li*3
+```
+
+- Outcome -
+
+```html
+<div>
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>
+```
+
+- Write text within the element
+
+```html
+p{Some text}
+```
+
+- Outcome -
+
+```html
+<p>Some text</p>
+```
+
+- Create multiple children with text
+
+```html
+ul>li*3{$}
+```
+
+- Outcome -
+
+```html
+<ul>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+</ul>
+```
