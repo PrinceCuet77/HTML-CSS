@@ -8,7 +8,7 @@
 - `div` and `span` - used for grouping
 - `div` - used to group multiple elements
 - `span` - used to group inline content
-- In HTML
+- In HTML -
 
 ```html
 <div>
@@ -28,6 +28,7 @@
 - Universal selector - `* {}` - applicable for all the id, class and tag
 
 ## Colors
+
 - `color` - for text
 - `background-color` - only for background color
 - `background` - background color or image
@@ -35,7 +36,7 @@
 ```css
 color: red;
 background-color: yellow;
-background: lightblue url("img_tree.gif") no-repeat fixed center;
+background: lightblue url('img_tree.gif') no-repeat fixed center;
 ```
 
 - RGB
@@ -45,7 +46,7 @@ background: lightblue url("img_tree.gif") no-repeat fixed center;
 color: rgb(255, 0, 0);
 ```
 
-- RGBA 
+- RGBA
 - A for opacity
 - Transparency 0-1
 
@@ -62,6 +63,167 @@ color: #ff0000;
 ```
 
 - Picking colors for projects - [Coolors](https://coolors.co/)
+
+## Units
+
+- Pixels - absolute values, one dot on the screen
+- `font-size` - size of the font
+- `width` - width of an element
+- `height` - height of an element
+
+```css
+h1 {
+  font-size: 60px;
+  width: 100px;
+  height: 80px;
+}
+```
+
+- `%` - percent
+- Relative unit/value
+- Depends on the parent
+- In HTML -
+
+```html
+<div class="outer">
+  <div class="inner"></div>
+</div>
+```
+
+- In CSS -
+
+```css
+.outer {
+  width: 300px;
+  height: 300px;
+  background: blue;
+}
+
+.inner {
+  width: 50%;
+  height: 50%;
+  background: red;
+}
+```
+
+- `em` - Relative, depends on parent
+- `1em` - 16px default browser style
+- `1em` - base value (16px) \* number (1) = 16px
+- `2em` - base value (16px) \* number (2) = 32px
+- `2em` - base value (10px) \* number (2) = 20px
+- In HTML -
+
+```html
+<div>
+  <h3 class="relative">some text</h3>
+</div>
+<div>
+  <h3 class="absolute">some text</h3>
+</div>
+```
+
+- In CSS -
+
+```css
+div {
+  font-size: 10px;
+}
+
+.relative {
+  font-size: 2em;
+}
+
+.absolute {
+  font-size: 32px;
+}
+```
+
+- `rem` - relative, depends on root (browser default font size)
+- `1rem` = base value (16px) \* number (1)
+- Customize the `font-size` either changing the browser default `font-size` or html tag element
+- In HTML -
+
+```html
+<div>
+  <h3 class="relative">some text</h3>
+</div>
+<div>
+  <h3 class="absolute">some text</h3>
+</div>
+```
+
+- In CSS -
+
+```css
+html {
+  font-size: 10px;
+}
+
+div {
+  font-size: 5px;
+}
+
+.relative {
+  font-size: 2em;
+}
+
+.absolute {
+  font-size: 32px;
+}
+```
+
+- Viewport units
+- `vh` - height - percent of the screen
+- `vw` - width - percent of the screen
+- In HTML - 
+
+```html
+<div class="hero"></div>
+<div class="about"></div>
+```
+
+- In CSS - 
+
+```css
+* {
+  Margin: 0;
+  Padding: 0;
+  Box-sizing: border-box;
+}
+
+.hero {
+  Background: green;
+  Height: 100vh;
+  Width: 100vw;
+}
+
+.about {
+  Background: blue;
+  Height: 43vh;
+  Width: 54vw;
+}
+```
+
+- `calc()` - perform math operations `+ - * /`
+- Max and match values
+- In HTML - 
+
+```html
+<div class="navbar"></div>
+<div class="banner"></div>
+```
+
+- In CSS - 
+
+```css
+.navbar {
+  height: 100px;
+}
+
+.banner {
+  min-height: calc(100vh - 100px);
+}
+```
 
 ## Typography
 
