@@ -1025,7 +1025,7 @@ div {
 - Free, Easy to get up running, simple syntax
 - [Website](https://fontawesome.com/icons)
 - Download and apply like that [link](https://fontawesome.com/v4/get-started/)
-- Use in HTML (two option) - 
+- Use in HTML (two option) -
 
 ```html
 <i class="fas fa-home"></i>
@@ -1036,7 +1036,7 @@ div {
 </span>
 ```
 
-- Adding CSS property to that icons - 
+- Adding CSS property to that icons -
 
 ```css
 /* Font-Awesome class */
@@ -1050,3 +1050,24 @@ div {
   color: red;
 }
 ```
+
+- `text-shadow` - shadow of the text
+- `box-shadow` - shadow of the box element or object
+
+```css
+text-shadow: x-value y-value blur-value color;
+box-shadow: x-value y-value blur-value color;
+```
+
+```css
+text-shadow: x-value y-value blur-value color;
+```
+
+- [Text Shadow Online Generator](https://cssgenerator.org/text-shadow-css-generator.html)
+- [Box Shadow Online Generator](https://cssgenerator.org/box-shadow-css-generator.html)
+
+## Browser Prefix
+
+- To check the browser compatibility [click here](https://caniuse.com/)
+- [Generate Autoprefix Online](https://autoprefixer.github.io/)
+- Write my css and paste it here and generate autoprefix as needed
