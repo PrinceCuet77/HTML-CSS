@@ -913,7 +913,8 @@ div {
 - `transition-timing-function` - the behaviour of the transition
 
 ```css
-transition: transition-property transition-duration transition-timing-function transition-delay;
+transition: transition-property transition-duration transition-timing-function
+  transition-delay;
 
 /* Like */
 transition: all 3s transition-timing-function 2s;
@@ -925,3 +926,56 @@ transition: all 3s transition-timing-function 2s;
 - `ease-out` - slow end
 - `ease-in-out` - gently slow start, fast, gently slow end
 - The key difference between `ease-in-out` begins and ends more gradually, creating a more gentle start and finish compared to `ease`
+
+## Animation
+
+- Transition 0 - 100% direct (from start to end state)
+- Amination 0 1% 2% .... 100% gradually (multiple states)
+
+```css
+div {
+  height: 150px;
+  width: 150px;
+  background: green;
+
+  /* Animation property */
+  animation-name: move;
+  animation-duration: 10s;
+  animation-iteration-count: 2; /* How many time the animation take place */
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(20px);
+    background: red;
+  }
+
+  50% {
+    transform: translateX(40px);
+    background: red;
+  }
+
+  100% {
+    transform: translateX(-40px);
+    background: red;
+  }
+}
+```
+
+- Shorthand -
+
+```css
+animation: animation-name animation-duration animation-iteration-count;
+```
+
+- For example:
+
+```css
+animation: move 10s infinite;
+```
+
+- `animation-fill-mode` - what values are applied by the animation outside the time it is executing
+
+```css
+animation-fill-mode: forwards; /* Stay in last applied animation */
+```
