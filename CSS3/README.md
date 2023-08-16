@@ -1,5 +1,68 @@
 # CSS
 
+- Tag select in CSS `tag {}`
+- Id select in CSS `#idName {}`
+- Class select in CSS `.className {}`
+- Id must be unique
+- But class must be unique and can assign multiple elements
+- `div` and `span` - used for grouping
+- `div` - used to group multiple elements
+- `span` - used to group inline content
+- In HTML
+
+```html
+<div>
+  <h3></h3>
+  <p>Lorem ipsum dolor sit <span>amet consectetur</span> adipisicing elit.</p>
+</div>
+```
+
+- Inheritance - children inherit styles from the parent, unless have their own styles
+- Like previous code, the style of `div` will continue `h3`, `p`, `span` children
+- If `h3` has its own style, then this style will override the parent’s style
+- CSS specificity hierarchy
+- Inline styles - `<h1 style=”color: pink”>Hello World</h1>`
+- Ids - `#navbar {}`
+- Classes, pseudo-classes, attribute selectors - `.text`, `:hover`, `[href]`
+- Elements and pseudo-elements - `h1`, `::before`
+- Universal selector - `* {}` - applicable for all the id, class and tag
+
+## Colors
+- `color` - for text
+- `background-color` - only for background color
+- `background` - background color or image
+
+```css
+color: red;
+background-color: yellow;
+background: lightblue url("img_tree.gif") no-repeat fixed center;
+```
+
+- RGB
+- RED GREEN BLUE 0-255
+
+```css
+color: rgb(255, 0, 0);
+```
+
+- RGBA 
+- A for opacity
+- Transparency 0-1
+
+```css
+color: rgba(255, 0, 0, 0.15);
+```
+
+- HEX values #RRGGBB
+- #FF0000 - Red
+- #00FF00 - Green
+
+```css
+color: #ff0000;
+```
+
+- Picking colors for projects - [Coolors](https://coolors.co/)
+
 ## Typography
 
 - `font-size` - size of the fonts
