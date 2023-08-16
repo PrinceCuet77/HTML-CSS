@@ -438,7 +438,7 @@ background: liner-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
   url('./big/jpeg') center/cover no-repeat fixed;
 ```
 
-- Alternate way - 
+- Alternate way -
 
 ```css
 background: liner-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -497,11 +497,13 @@ left: 200px;
 - [`absolute` Example](https://www.w3schools.com/css/tryit.asp?filename=trycss_position_absolute)
 
 ```css
-div { /* Parent */
+/* Parent */
+div {
   position: relative;
 }
 
-p { /* Child */
+/* Child */
+p {
   position: absolute;
   top: 0;
   left: 0;
@@ -570,3 +572,356 @@ body {
 - z-index - z-axis
 - Default - `0`
 - Does not work on `position: static`
+- Specifies the stack order of an element
+- An element with greater stack order is always in front of an element with a lower stack order
+
+```css
+position: relative;
+left: 0px;
+top: 0px;
+z-index: 1; /* Move to the top of all overlapped element */
+```
+
+## Pseudo-elements
+
+- `::before`, `::after` - pseudo-elements creates element and inserts before and after the content
+- `content:''` - required, insert text & image too
+- `img` - does not work, so cover `img` with `div` and apply pseudo-element over `div`
+- It's by default `display: inline-block`
+
+![Pseudo Element](photo/pseudo-element.png)
+
+- If I use `content: ''`, nothing will show & other CSS properties are not worked
+- Must use the following properties together, otherwise nothing will show -
+
+```css
+content: '';
+display: block;
+width: 100%; /* Can customize */
+height: 20px; /* Can customize */
+```
+
+## More Selectors
+
+### Basic Selectors
+
+- Universal selector -
+
+```css
+* {
+  color: red;
+}
+```
+
+- Id selector -
+
+```css
+#heading {
+  color: red;
+}
+```
+
+- Class selector -
+
+```css
+.heading {
+  color: red;
+}
+```
+
+- Tag selector -
+
+```css
+p {
+  color: red;
+}
+```
+
+### Descendant and Child Selectors
+
+- In HTML -
+
+```html
+<div>
+  <h1>I'm a child and descendant</h1>
+  <!-- Immediate child -->
+</div>
+
+<div>
+  <h1>I'm a child and descendant</h1>
+  <!-- Immediate child -->
+  <ul>
+    <li>
+      <h1>I'm a descendant</h1>
+    </li>
+  </ul>
+</div>
+```
+
+- In CSS -
+
+```css
+/* All 'h1' inside 'div' -> mark all 'h1' */
+div h1 {
+  color: red;
+}
+
+.header h1 {
+} /* Using class selector */
+
+/* Mark direct (immediate) child 'h1' inside parent 'div' */
+div > h1 {
+  color: green;
+}
+
+.header > h1 {
+} /* Using class selector */
+```
+
+- `::first-line`, `::first-letter`
+- In HTML -
+
+```html
+<p>
+  Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+  when an unknown printer took a galley of type and scrambled it to make a type
+  specimen book.
+</p>
+```
+
+```css
+p::first-line {
+  /* Modify the first line of the paragraph */
+  font-weight: bold;
+}
+
+p::first-letter {
+  /* Modify the first letter of the paragraph */
+  font-size: 150%;
+}
+```
+
+- `:hover` (pseudo class)
+- Activate when hovering the mouse of the element
+
+```css
+/* With tag selector */
+div:hover {
+}
+
+/* With id selector */
+#heading:hover {
+}
+
+/* With class selector */
+.heading:hover {
+}
+```
+
+- `:link` - unvisited links with href
+
+```css
+a:link {
+  color: red;
+  background: grey;
+}
+```
+
+- `:visited` - visited links
+
+```css
+a:visited {
+  color: red;
+  background: grey;
+}
+```
+
+- `:hover` - hover using mouse
+
+```css
+a:hover {
+  color: red;
+  background: grey;
+}
+```
+
+- `:active` - as the user clicks
+
+```css
+a:active {
+  color: red;
+  background: grey;
+}
+```
+
+- `a` - all links
+
+```css
+a {
+  color: red;
+  background: grey;
+}
+```
+
+- `:root` - root element of the document, higher specificity
+- HTML element
+- General styles
+- CSS variables
+- Change the browser default `font-size` using `:root` (pseudo element)
+
+```css
+:root {
+  font-size: 10px; /* Default was 16px */
+}
+```
+
+## Animation Property
+
+### Transform
+
+- Modify the object or element
+- `transform: translate()` - Move the element according X & Y axis
+
+```css
+transform: translate(30px, 50px); /* X = 30px & Y = 50px */
+transform: translateX(-30px); /* X = -30px only */
+transform: translateY(-50px); /* Y = -50px only */
+transform: translateY(
+  50%
+); /* Y = parent of 50%, If parent width = 100px then Y = 50px */
+```
+
+- `transform: scale()` - Increase the size of the element according X & Y axis
+
+```css
+transform: scale(2); /* X = 2 * parent height & Y = 2 * parent width */
+transform: scale(
+  1.2,
+  1.5
+); /* X = 1.2 * parent height & Y = 1.5 * parent width */
+transform: scaleX(1.5); /* X = 1.5 * parent height only */
+transform: scaleY(1.2); /* Y = 1.2 * parent width only */
+```
+
+- `transform: rotate()` - Rotate the element X, Y, Z axis
+
+```css
+transform: rotate(20deg); /* Z = 20deg or clock-wise */
+transform: rotate(-20deg); /* Z = -20deg or anti clock-wise */
+```
+
+- Same as
+
+```css
+transform: rotateZ(20deg);
+transform: rotateZ(20deg);
+```
+
+- Also applicable but can't view in 2D object
+- Must use 3D object
+
+```css
+transform: rotateX(20deg);
+transform: rotateY(20deg);
+```
+
+- `transform: rotate()`
+
+```css
+transform: skew(40deg, 50deg);
+transform: skewX(40deg);
+transform: skewY(50deg);
+```
+
+### Transition
+
+- Change over time
+- `transition-property` - which property I want to add transition
+- `transition-duration` - how many time to take that change
+
+```css
+div:hover {
+  background: coral;
+}
+
+div {
+  height: 150px;
+  width: 150px;
+  background: green;
+  transition-property: background; /* Select the property */
+  transition-duration: 4s; /* Duration */
+}
+```
+
+- Add multiple property
+
+```css
+transition-property: background, border-radius;
+transition-duration: 4s; /* Both transition will take 4s */
+```
+
+- Add different duration time
+
+```css
+transition-property: background, border-radius;
+transition-duration: 4s, 2s; /* background and border-radius will take 4s and 2s respectively */
+```
+
+- `transition-delay` - waits and after that start changing
+
+```css
+transition-property: background, border-radius;
+transition-duration: 4s; /* Both transition will take 4s */
+transition-delay: 2s; /* Wait 2s, then start the transition */
+```
+
+- Shorthand -
+
+```css
+transition: transition-property transition-duration transition-delay;
+```
+
+- For example -
+
+```css
+div {
+  height: 150px;
+  width: 150px;
+  background: green;
+  transition: background 2s 1s, border-radius 3s 2s; /* Not cover - 'scale' */
+}
+
+div:hover {
+  background: coral;
+  border-radius: 50%;
+  transform: scale(1.2);
+}
+```
+
+- Cover all CSS property
+
+```css
+div {
+  height: 150px;
+  width: 150px;
+  background: green;
+  transition: all 2s 1s; /* Ignoring 'delay' - all 2s; */
+}
+```
+
+- `transition-timing-function` - the behaviour of the transition
+
+```css
+transition: transition-property transition-duration transition-timing-function transition-delay;
+
+/* Like */
+transition: all 3s transition-timing-function 2s;
+```
+
+- `ease` - slow start, fast, slow end (by default)
+- `linear` - same speed start to end
+- `ease-in` - slow start
+- `ease-out` - slow end
+- `ease-in-out` - gently slow start, fast, gently slow end
+- The key difference between `ease-in-out` begins and ends more gradually, creating a more gentle start and finish compared to `ease`
