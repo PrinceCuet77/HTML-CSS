@@ -1018,3 +1018,35 @@ div {
   color: var(--primaryRed);
 }
 ```
+
+## Icons
+
+- Font-Awesome Icons
+- Free, Easy to get up running, simple syntax
+- [Website](https://fontawesome.com/icons)
+- Download and apply like that [link](https://fontawesome.com/v4/get-started/)
+- Use in HTML (two option) - 
+
+```html
+<i class="fas fa-home"></i>
+<i class="fas fa-home fa-10x"></i> <!-- Size 10x increase -->
+
+<span class="social-icon>
+  <i class="fab fa-facebook"></i>
+</span>
+```
+
+- Adding CSS property to that icons - 
+
+```css
+/* Font-Awesome class */
+.fa-home {
+  color: green;
+}
+
+/* Custom class */
+.social-icon {
+  font-size: 4rem;
+  color: red;
+}
+```
