@@ -979,3 +979,42 @@ animation: move 10s infinite;
 ```css
 animation-fill-mode: forwards; /* Stay in last applied animation */
 ```
+
+## CSS Variables (Custom Properties)
+
+- Hold a value and reuse it
+- Assign - `--varName: value`
+- Use - `property: var(--varName)`
+- Applied in any property
+- Ignore multiple use of any value of a property
+- Scope -
+- In `:root{}` === global
+
+```css
+:root {
+  --primaryColor: #1313fa;
+  --mainTransition: all 0.4s linear;
+}
+
+.heading {
+  color: var(--primaryColor);
+}
+
+.heading2 {
+  color: var(--primaryColor);
+  transition: var(mainTransition);
+}
+```
+
+- In element === local
+- Only accessable inside the child element
+
+```css
+div {
+  --primaryRed: red;
+}
+
+.main-text {
+  color: var(--primaryRed);
+}
+```
