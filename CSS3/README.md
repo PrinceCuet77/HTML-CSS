@@ -4,7 +4,7 @@
 - Id select in CSS `#idName {}`
 - Class select in CSS `.className {}`
 - Id must be unique
-- But class must be unique and can assign multiple elements
+- But class is not unique and can assign multiple elements
 - `div` and `span` - used for grouping
 - `div` - used to group multiple elements
 - `span` - used to group inline content

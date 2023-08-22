@@ -6,21 +6,34 @@
     <title>CSS Grid Layout</title>
     <link rel="stylesheet" href="./base.css" />
     <style>
-      /* .container {
+      .container {
+        height: 100%;
         display: grid;
-        grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-        grid-gap: 3px;
-      } */
+        grid-template-columns: repeat(12, 1fr); /* Standard grid: 12 portion */
+        grid-template-rows: 50px auto 50px; /* Also workable - 50px 1fr 50px */
+      }
+
+      .header {
+        grid-column: 1 / -1;
+      }
+
+      .content {
+        grid-column: 2 / -1;
+      }
+
+      .footer {
+        grid-column: 1 / -1;
+      }
     </style>
   </head>
   <body>
     <div class="container">
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
-      <div>4</div>
-      <div>5</div>
-      <div>6</div>
+      <div class="header">Header</div>
+      <div class="menu">Menu</div>
+      <div class="content">Content</div>
+      <div class="footer">Footer</div>
+      <!-- <div>5</div>
+      <div>6</div> -->
     </div>
   </body>
 </html>
