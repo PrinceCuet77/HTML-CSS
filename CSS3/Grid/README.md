@@ -550,3 +550,116 @@ grid-template: row / column;
 ```
 
 ![](photo/implicit-row2.png)
+
+### `justify-content`
+
+- Resizing browser, the content moves to the left
+- Empty space creates to the right
+
+![](photo/1.png)
+
+- Because -
+
+```css
+.container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 90px);
+  grid-template-rows: repeat(2, 90px);
+  gap: 3px;
+  justify-content: left; /* By default */
+}
+```
+
+- Content move to the right -
+
+```css
+justify-content: right;
+```
+
+![](photo/2.png)
+
+- Content move to the center -
+
+```css
+justify-content: center;
+```
+
+![](photo/3.png)
+
+- Create responsive space in between the contents
+- Spaces are equal
+
+```css
+justify-content: space-between;
+```
+
+![](photo/4.png)
+
+- Create responsive equal space each of the contents
+- Spaces are equal
+
+```css
+justify-content: space-around;
+```
+
+![](photo/5.png)
+
+- Create responsive equal space in left & right of the contents
+- Spaces are evenly equal
+
+```css
+justify-content: space-evenly;
+```
+
+![](photo/6.png)
+
+### `align-content`
+
+- same property as `justify-content`
+
+### `justify-items`
+
+- same property as `justify-content`
+
+### `align-items`
+
+- same property as `justify-content`
+
+### `justify-self`
+
+- Apply content alignement in specific element
+- In HTML -
+
+```html
+<div class="container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>
+  <div class="seven">7</div>
+  <div>8</div>
+  <div>9</div>
+  <div>10</div>
+</div>
+```
+
+```css
+.container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 90px);
+  grid-template-rows: repeat(2, 90px);
+  gap: 3px;
+  justify-content: center;
+  align-content: center;
+}
+
+.seven {
+  justify-self: center;
+}
+```
+
+![](photo/7.png)
