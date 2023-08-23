@@ -382,3 +382,171 @@ grid-template: row / column;
 ```
 
 ![Row customization](photo/row-customization.png)
+
+### `grid-template-areas`
+
+- Visually design using `grid-template-areas`
+- Design in `grid-template-areas`
+- Denote that symbol using `grid-area` in specific field
+
+```css
+.container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 50px auto 50px;
+  grid-template-areas:
+    'h h h h h h h h h h h h'
+    'm m c c c c c c c c c c'
+    'f f f f f f f f f f f f';
+}
+
+.header {
+  grid-area: h;
+}
+
+.menu {
+  grid-area: m;
+}
+
+.content {
+  grid-area: c;
+}
+
+.footer {
+  grid-area: f;
+}
+```
+
+![Grid template areas](photo/grid-template-areas.png)
+
+- If I want to skip any part then -
+
+```css
+.container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 50px auto 50px;
+  grid-template-areas:
+    'h h h h h h h h h . . .'
+    'm m c c c c c c c c c c'
+    '. . f f f f f f f f f f';
+}
+
+.header {
+  grid-area: h;
+}
+
+.menu {
+  grid-area: m;
+}
+
+.content {
+  grid-area: c;
+}
+
+.footer {
+  grid-area: f;
+}
+```
+
+![Grid template areas](photo/grid-template-areas2.png)
+
+### `auto-fit` & `minmax()` function
+
+- Column will be 5 and row will be 2
+- In HTML setup -
+
+```html
+<div class="container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>
+  <div>7</div>
+  <div>8</div>
+  <div>9</div>
+  <div>10</div>
+</div>
+```
+
+- In CSS -
+
+```css
+.container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 90px);
+  grid-template-rows: repeat(2, 1fr);
+}
+```
+
+![Layout](photo/layout.png)
+
+- _Problem:_ If I resize the window, free space in right side.
+
+![Layout](photo/problem-layout.png)
+
+- _Workaround:_ using `auto-fit` I can solve it
+- If I have `<90px` area then it should be empty
+- If I have `>90px` area then one more portion will be replaced coming from down element
+
+![Workaround](photo/workaround.png)
+
+- If I resize the window then I can see the proper example -
+
+![Workaround](photo/resize-workaround.png)
+
+- _Problem:_ Previous picture, if `<90px` then few area is empty
+- _Workaround:_ Solve using `minmax()` function
+- Expand will work between `90px` to `1fr`
+- Basically, if empty space is `<90px` then expand the element
+
+![Expand](photo/expand.png)
+
+- If empty space is `>90px`, then replaced coming from down element
+
+![Expand](photo/replaced.png)
+
+### Difference between `auto-fit` & `auto-fill`
+
+- `auto-fit` replaces with element if found out free space otherwise expanding elements
+
+![auto-fit](photo/auto-fit.png)
+
+- `auto-fill` replaces with same sized empty element if found out free space otherwise expanding if there is some elements
+
+![auto-fill](photo/auto-fill.png)
+
+### Implicit Rows
+
+- If I set 1st row but don't care about other rows
+
+```css
+.container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  grid-template-rows: repeat(1, 1fr);
+}
+```
+
+![](photo/implicit-row.png)
+
+- But I can care about rest of the rows using `grid-auto-rows`
+- Similarly I can also care about rest of the columns using `grid-auto-columns`
+
+```css
+.container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  grid-template-rows: repeat(1, 1fr);
+  grid-auto-rows: 200px;
+}
+```
+
+![](photo/implicit-row2.png)
