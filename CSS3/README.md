@@ -12,20 +12,20 @@
 
 ```html
 <div>
-  <h3></h3>
+  <h3>Lorem ipsum</h3>
   <p>Lorem ipsum dolor sit <span>amet consectetur</span> adipisicing elit.</p>
 </div>
 ```
 
-- Inheritance - children inherit styles from the parent, unless have their own styles
+- _Inheritance:_ - children inherit styles from the parent, unless have their own styles
 - Like previous code, the style of `div` will continue `h3`, `p`, `span` children
 - If `h3` has its own style, then this style will override the parent’s style
-- CSS specificity hierarchy
-- Inline styles - `<h1 style=”color: pink”>Hello World</h1>`
-- Ids - `#navbar {}`
-- Classes, pseudo-classes, attribute selectors - `.text`, `:hover`, `[href]`
-- Elements and pseudo-elements - `h1`, `::before`
-- Universal selector - `* {}` - applicable for all the id, class and tag
+- _CSS specificity hierarchy:_
+  - Inline styles - `<h1 style=”color: pink”>Hello World</h1>`
+  - Ids - `#navbar {}`
+  - Classes, pseudo-classes, attribute selectors - `.text`, `:hover`, `[href]`
+  - Elements and pseudo-elements - `h1`, `::before`
+  - Universal selector - `* {}` - applicable for all the id, class and tag
 
 ## Colors
 
@@ -175,45 +175,45 @@ div {
 - Viewport units
 - `vh` - height - percent of the screen
 - `vw` - width - percent of the screen
-- In HTML - 
+- In HTML -
 
 ```html
 <div class="hero"></div>
 <div class="about"></div>
 ```
 
-- In CSS - 
+- In CSS -
 
 ```css
 * {
-  Margin: 0;
-  Padding: 0;
-  Box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .hero {
-  Background: green;
-  Height: 100vh;
-  Width: 100vw;
+  background: green;
+  height: 100vh;
+  width: 100vw;
 }
 
 .about {
-  Background: blue;
-  Height: 43vh;
-  Width: 54vw;
+  background: blue;
+  height: 43vh;
+  width: 54vw;
 }
 ```
 
 - `calc()` - perform math operations `+ - * /`
 - Max and match values
-- In HTML - 
+- In HTML -
 
 ```html
 <div class="navbar"></div>
 <div class="banner"></div>
 ```
 
-- In CSS - 
+- In CSS -
 
 ```css
 .navbar {
@@ -317,9 +317,9 @@ body {
 
 ```css
 padding-top: 5px;
-padding-top: 10px;
-padding-top: 15px;
-padding-top: 20px;
+padding-bottom: 10px;
+padding-left: 15px;
+padding-right: 20px;
 ```
 
 - Combining all 4 -
@@ -347,9 +347,9 @@ padding: 5px 10px 15px 20px; /* If all 4 items are the different */
 
 ```css
 margin-top: 5px;
-margin-top: 10px;
-margin-top: 15px;
-margin-top: 20px;
+margin-bottom: 10px;
+margin-left: 15px;
+margin-right: 20px;
 ```
 
 - Combining all 4 -
